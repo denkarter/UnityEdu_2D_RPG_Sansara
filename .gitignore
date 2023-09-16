@@ -29,6 +29,9 @@
 # Gradle cache directory
 .gradle/
 
+# Rider dir
+.idea/
+
 # MacOS temp files and dirs
 *.DS_Store
 
