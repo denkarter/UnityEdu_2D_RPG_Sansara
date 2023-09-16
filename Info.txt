@@ -1,0 +1,13 @@
+*** Statemachine
+
+Создадим скрипты Player, PlayerState и PlayerStateMachine.
+В классе PlayerState создадим поля игрока и стейтмашины, булеву переменную animBoolName в конструкторе их инитим.
+Создадим методы Enter, Update, Exit
+В файле PlayerStateMachine создаём свойство PlayerState currentState, интим в конструкторе и там же вызываем у него метод Enter
+Здесь же создаём метод ChangeState и  в нём CurrentState.Exit(); CurrentState = newState; CurrentState.Enter();
+Создадим 2 скрипта - состояния игрока: PlayerIdleState и PlayerMoveState. Наследуем от PlayerState и реализуем (и переопределяем) методы
+В скрипте Player наследуемся от монобеха, создаём 2 свойства PlayerIdleState и PlayerMoveState, а также поле стейтмашины.
+В Awake инициализируем все поля  с передачей нужных параметров
+В Start вызываем у стейтмашины метод инициализации PlayerStateMachine.Initialize(IdleState)
+В Update вызываем PlayerStateMachine.CurrentState.Update();
+Машина состояний готова. Для проверки в PlayerState в каждом методе состояния добавим логи с названием состояния. На сцене создадим пустой объект Player, кинем на него скрипт Player и запустим, смотрим логи в консоли.
